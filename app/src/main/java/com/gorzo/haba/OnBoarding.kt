@@ -49,7 +49,7 @@ fun SplashScreen( onTimeout: () -> Unit){
             Text(text = "HABA", color = Color.White, fontSize = 32.sp)
             Spacer(Modifier.width(10.dp))
             Text(
-                text = "HABA", color = Color.White, fontSize = 32.sp, fontWeight = FontWeight.Thin
+                text = "HABA", color = Color.White, fontSize = 32.sp, fontWeight = FontWeight.Light
             )
         }
     }
@@ -67,7 +67,7 @@ fun WelcomeScreen(onNext:() -> Unit){
     val  kodchassan = FontFamily(Font(R.font.kodchassan))
     val manrope = FontFamily(Font(R.font.manrope))
     Column (
-        modifier = Modifier.fillMaxSize().padding(horizontal = 1.dp), horizontalAlignment = Alignment.CenterHorizontally
+        modifier = Modifier.fillMaxSize().padding(horizontal = 5.dp), horizontalAlignment = Alignment.CenterHorizontally
     ){
         Image(painter = painterResource(id = R.drawable.vegetables),
             contentDescription = "Welcome Image"
@@ -82,10 +82,10 @@ fun WelcomeScreen(onNext:() -> Unit){
         )
         Spacer(Modifier.height(50.dp))
         Text(
-
+            modifier = Modifier.fillMaxWidth(0.9f),
             text = "Buy fresh groceries from local" +
                     " mama mboga - at better prices, with your neighbors!", textAlign = TextAlign.Center,
-            fontSize = 25.sp,
+            fontSize = 20.sp,
             fontFamily = manrope
 
         )
@@ -109,7 +109,7 @@ fun GroupBuying(onNext:() -> Unit){
     val  kodchassan = FontFamily(Font(R.font.kodchassan))
     val manrope = FontFamily(Font(R.font.manrope))
     Column (
-        modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally
+        modifier = Modifier.fillMaxSize().padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally
     ){
         Image(painter = painterResource(id = R.drawable.groupbuying
         ),
@@ -125,10 +125,10 @@ fun GroupBuying(onNext:() -> Unit){
         )
         Spacer(Modifier.height(50.dp))
         Text(
-
+             modifier = Modifier.fillMaxWidth(0.9f),
             text = "Instead of buying alone, you join a group  with others nearby.\n" +
                     "The more the people , the better the price.", textAlign = TextAlign.Center,
-            fontSize = 25.sp,
+            fontSize = 20.sp,
             fontFamily = manrope
 
         )
@@ -192,7 +192,7 @@ fun HowItWorks(onNext:() -> Unit){
         Spacer(Modifier.height(50.dp))
 
         Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 55.dp), horizontalAlignment = Alignment.Start) {
-            Row(modifier = Modifier.padding(horizontal = 0.dp)) {
+            Row(modifier = Modifier.padding(horizontal = 10.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.rocket),
                     contentDescription = "Rocket",
@@ -206,7 +206,7 @@ fun HowItWorks(onNext:() -> Unit){
 
             }
             Spacer(Modifier.height(10.dp))
-            Row(modifier = Modifier.padding(horizontal = 0.dp)) {
+            Row(modifier = Modifier.padding(horizontal = 10.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.share),
                     contentDescription = "Rocket",
@@ -219,22 +219,22 @@ fun HowItWorks(onNext:() -> Unit){
                 )
             }
             Spacer(Modifier.height(10.dp))
-            Row(modifier = Modifier.padding(horizontal = 0.dp)) {
+            Row(modifier = Modifier.padding(horizontal =10.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.target),
                     contentDescription = "Rocket",
                     modifier = Modifier.size(25.dp)
                 )
-                Spacer(Modifier.width(20.dp))
+                Spacer(Modifier.width(15.dp))
                 Text(
                     text = "Reach Target", fontSize = 20.sp,    fontFamily = manrope
                 )
             }
             Spacer(Modifier.height(10.dp))
-            Row(modifier = Modifier.padding(horizontal = 0.dp)) {
+            Row(modifier = Modifier.padding(horizontal = 10.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.palm),
-                    contentDescription = "Rocket",
+                    contentDescription = "Palm",
                     modifier = Modifier.size(30.dp)
                 )
                 Spacer(Modifier.width(17.dp))
@@ -290,6 +290,7 @@ fun EveryBodyWins(onNext:() -> Unit){
         )
         Spacer(Modifier.height(100.dp))
         Text(
+
             text = "Everybody Wins",
             fontWeight = FontWeight.Bold,
             fontSize = 44.sp, color = HabaOrange,
@@ -297,15 +298,15 @@ fun EveryBodyWins(onNext:() -> Unit){
         )
         Spacer(Modifier.height(50.dp))
         Text(
-
+            modifier = Modifier.padding(horizontal = 2.dp),
             text ="Lower prices for you\n" +
                     "Higher  sales for mama mboga\n" +
                     "Less food waste, more community", textAlign = TextAlign.Center,
-            fontSize = 25.sp,
+            fontSize = 20.sp,
             fontFamily = manrope
 
         )
-        Spacer(Modifier.height(70.dp))
+        Spacer(Modifier.height(90.dp))
         Button(onClick = onNext, colors =ButtonDefaults.buttonColors(HabaOrange) , modifier = Modifier.size(200.dp , 50.dp) ){
             Text("Register" , fontSize = 20.sp,     fontFamily = manrope)
         }
@@ -313,12 +314,12 @@ fun EveryBodyWins(onNext:() -> Unit){
 }
 
 
-@Composable
-@Preview(showBackground = true)
-fun PreviewEverybodywins(){
-
-    EveryBodyWins(onNext = {})
-}
+//@Composable
+//@Preview(showBackground = true)
+//fun PreviewEverybodywins(){
+//
+//    EveryBodyWins(onNext = {})
+//}
 
 
 
