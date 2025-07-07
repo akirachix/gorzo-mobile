@@ -92,27 +92,27 @@ fun SignUpScreen(navController: NavController,
 
         Text (text = "First Name", fontFamily = manrope)
         Spacer(modifier = Modifier.height(0.dp))
-        SignUpField( label = "Enter Your First Name")
+        SignUpField( label = "Enter Your First Name", keyboardType = KeyboardType.Text)
 
         Spacer(modifier = Modifier.height(5.dp))
         Text (text = "Last Name", fontFamily = manrope)
         Spacer(modifier = Modifier.height(0.dp))
-        SignUpField( label = "Enter Your Last Name")
+        SignUpField( label = "Enter Your Last Name",keyboardType = KeyboardType.Text)
 
         Spacer(modifier = Modifier.height(5.dp))
         Text (text = "Phone Number", fontFamily = manrope)
         Spacer(modifier = Modifier.height(0.dp))
-        SignUpField( label = "Enter Your Phone Number")
+        SignUpField( label = "Enter Your Phone Number",keyboardType = KeyboardType.Phone)
 
         Spacer(modifier = Modifier.height(5.dp))
         Text (text = "PIN",fontFamily = manrope)
         Spacer(modifier = Modifier.height(0.dp))
-        SignUpField( label = "Enter Your Pin")
+        SignUpField( label = "Enter Your Pin",keyboardType = KeyboardType.NumberPassword)
 
         Spacer(modifier = Modifier.height(5.dp))
         Text (text = "Confirm Pin", fontFamily = manrope)
         Spacer(modifier = Modifier.height(0.dp))
-        SignUpField( label = "Confirm Your Pin")
+        SignUpField( label = "Confirm Your Pin",keyboardType = KeyboardType.NumberPassword)
 
 
         Spacer(Modifier.height(25.dp))
@@ -230,11 +230,11 @@ fun SignIn(navController: NavController,
         Spacer(Modifier.height(40.dp))
         Text (text = "Phone Number", fontFamily = manrope)
         Spacer(modifier = Modifier.height(8.dp))
-        InputField( label = "Enter Your Phone Number")
+        InputField( label = "Enter Your Phone Number",keyboardType = KeyboardType.Phone)
         Spacer(modifier = Modifier.height(13.dp))
         Text (text = "PIN", fontFamily = manrope)
         Spacer(modifier = Modifier.height(8.dp))
-        InputField( label = "Enter Your Name")
+        InputField( label = "Enter Your Pin",keyboardType = KeyboardType.NumberPassword)
 
         Spacer(Modifier.height(40.dp))
         Button(onClick = {},  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
