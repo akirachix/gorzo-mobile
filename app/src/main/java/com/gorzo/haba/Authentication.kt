@@ -48,7 +48,7 @@ fun SignUpField( label:String, isPassword: Boolean = false, keyboardType:Keyboar
     var value by remember { mutableStateOf("") }
     OutlinedTextField(value=value,
         onValueChange = {value = it},
-        label = { Text(label, fontSize = 13.sp) },
+        label = { Text(label, fontSize = 18.sp) },
         textStyle = TextStyle(fontSize = 14.sp),
         singleLine= true,
         visualTransformation = if (isPassword) PasswordVisualTransformation() else VisualTransformation.None,
@@ -147,7 +147,7 @@ fun SignUpScreen(navController: NavController,
                 .padding(24.dp, 16.dp, 24.dp, 0.dp)
                 .fillMaxWidth(),
             style = androidx.compose.ui.text.TextStyle(
-                fontSize = 14.sp,
+                fontSize = 18.sp,
                 fontFamily = kodchassan,
                 textAlign = TextAlign.Center,
                 color = Color.Black
@@ -194,7 +194,7 @@ fun InputField( label:String, isPassword: Boolean = false, keyboardType:Keyboard
     var value by remember { mutableStateOf("") }
     OutlinedTextField(value=value,
         onValueChange = {value = it},
-        label = { Text(label, fontSize = 13.sp) },
+        label = { Text(label, fontSize = 18.sp) },
         textStyle = TextStyle(fontSize = 14.sp),
         singleLine= true,
         visualTransformation = if (isPassword) PasswordVisualTransformation() else VisualTransformation.None,
@@ -262,7 +262,7 @@ fun SignIn(navController: NavController,
                 .padding(24.dp, 16.dp, 24.dp, 0.dp)
                 .fillMaxWidth(),
             style = androidx.compose.ui.text.TextStyle(
-                fontSize = 14.sp,
+                fontSize = 18.sp,
                 fontFamily = kodchassan,
                 textAlign = TextAlign.Center,
                 color = Color.Black
