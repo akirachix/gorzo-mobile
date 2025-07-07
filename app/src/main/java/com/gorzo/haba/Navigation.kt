@@ -31,7 +31,15 @@ fun OnBoardingNavigation(){
             HowItWorks (onNext = {  navController.navigate(("everybodywins"))})
         }
         composable("everybodywins"){
-            EveryBodyWins (onNext = {  navController.navigate("")})
+            EveryBodyWins (onNext = {  navController.navigate("signup")})
+
+        }
+        composable("signup"){
+            SignUpScreen (navController = navController, onNext = { navController.navigate ("signin")})
+
+        }
+        composable("signin"){
+            SignIn(navController = navController, onNext = { navController.navigate ("home")})
         }
     }
 }
