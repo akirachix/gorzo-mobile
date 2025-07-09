@@ -231,13 +231,14 @@ fun SignIn(navController: NavController,
         Text (text = "Phone Number", fontFamily = manrope)
         Spacer(modifier = Modifier.height(8.dp))
         InputField( label = "Enter Your Phone Number",keyboardType = KeyboardType.Phone)
+
         Spacer(modifier = Modifier.height(13.dp))
         Text (text = "PIN", fontFamily = manrope)
         Spacer(modifier = Modifier.height(8.dp))
         InputField( label = "Enter Your Pin",keyboardType = KeyboardType.NumberPassword)
 
         Spacer(Modifier.height(40.dp))
-        Button(onClick = {},  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
+        Button(onClick = onNext,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
 
             Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp)
         }
