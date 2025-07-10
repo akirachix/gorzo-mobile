@@ -309,7 +309,7 @@ fun ResetPassword(onNext: () -> Unit,onBack: () -> Unit) {
         )
         Spacer(Modifier.height(45.dp))
 
-        Text(" Password", fontFamily = manrope, modifier = Modifier.padding(start = 45.dp))
+        Text(" Pin", fontFamily = manrope, modifier = Modifier.padding(start = 45.dp))
         InputField( label = "Enter your pin",keyboardType = KeyboardType.NumberPassword,
             modifier = Modifier.padding(horizontal = 40.dp).width(300.dp))
         Spacer(Modifier.height(40.dp))
