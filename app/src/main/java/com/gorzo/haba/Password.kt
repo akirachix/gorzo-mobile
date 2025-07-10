@@ -83,14 +83,14 @@ Column(
 
     }
 
-Text(text = "Forgot Password", fontFamily = manrope,
+Text(text = "Forgot Pin", fontFamily = manrope, color = HabaOrange,
     style = MaterialTheme.typography.headlineLarge,fontSize = 35.sp,
 fontWeight = FontWeight.Bold,
-    modifier = Modifier .padding(top = 30.dp, ).padding(horizontal = 20.dp)
+    modifier = Modifier .padding(top = 30.dp, start = 50.dp ).padding(horizontal = 20.dp)
 )
     Spacer(Modifier.height(25.dp))
 
-    Text(text = "Enter Your Phone number below and we’ll send you a link to reset your password",
+    Text(text = "Enter Your Phone number below and we’ll send you a link to reset your pin",
     fontFamily = manrope,
         modifier = Modifier.padding(horizontal = 10.dp)
     )
@@ -302,7 +302,7 @@ fun ResetPassword(onNext: () -> Unit,onBack: () -> Unit) {
 
         }
         Text(
-            text = "Reset Password", fontFamily = manrope,
+            text = "Reset Pin", fontFamily = manrope, color = HabaOrange,
             style = MaterialTheme.typography.headlineLarge, fontSize = 35.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 30.dp,).padding(horizontal = 45.dp)
@@ -310,12 +310,12 @@ fun ResetPassword(onNext: () -> Unit,onBack: () -> Unit) {
         Spacer(Modifier.height(45.dp))
 
         Text(" Password", fontFamily = manrope, modifier = Modifier.padding(start = 45.dp))
-        InputField( label = "Enter your password",keyboardType = KeyboardType.NumberPassword,
+        InputField( label = "Enter your pin",keyboardType = KeyboardType.NumberPassword,
             modifier = Modifier.padding(horizontal = 40.dp).width(300.dp))
         Spacer(Modifier.height(40.dp))
 
-        Text("Confirm  Password",fontFamily = manrope,modifier = Modifier.padding(start = 45.dp))
-        InputField( label = "Confirm your password",keyboardType = KeyboardType.NumberPassword,
+        Text("Confirm  Pin",fontFamily = manrope,modifier = Modifier.padding(start = 45.dp))
+        InputField( label = "Confirm your pin",keyboardType = KeyboardType.NumberPassword,
             modifier = Modifier.padding(horizontal = 40.dp).width(300.dp))
         Spacer(Modifier.height(45.dp))
 
@@ -326,7 +326,7 @@ fun ResetPassword(onNext: () -> Unit,onBack: () -> Unit) {
             shape = RoundedCornerShape(8.dp),
         )
         {
-            Text("Reset password", fontSize = 25.sp, fontFamily = manrope)
+            Text("Reset pin", fontSize = 25.sp, fontFamily = manrope)
         }
     }
 }
