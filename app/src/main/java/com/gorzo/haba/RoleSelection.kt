@@ -108,7 +108,7 @@ fun RoleSelectionScreen(navController: NavController) {
         ) {
             Text(text = "I'm a Vendor", color = HabaOrange)
         }
-        Spacer(Modifier.padding(vertical = 140.dp))
+        Spacer(Modifier.padding(vertical = 135.dp))
         BottomWave()
     }
 }
