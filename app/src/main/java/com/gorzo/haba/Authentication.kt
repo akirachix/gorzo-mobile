@@ -247,7 +247,7 @@ fun SignIn(onForgetPassword: () -> Unit,
         Spacer(Modifier.height(40.dp))
         Button(onClick = onSignIn,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
 
-            Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp, FontWeight= FontWeight.Bold)
+            Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp, fontWeight = FontWeight.Bold)
         }
 
 
