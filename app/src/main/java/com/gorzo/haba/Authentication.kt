@@ -48,7 +48,7 @@ fun SignUpField( label:String, isPassword: Boolean = false, keyboardType:Keyboar
     var value by remember { mutableStateOf("") }
     OutlinedTextField(value=value,
         onValueChange = {value = it},
-        label = { Text(label, fontSize = 18.sp) },
+        label = { Text(label, fontSize = 14.sp) },
         textStyle = TextStyle(fontSize = 14.sp),
         singleLine= true,
         visualTransformation = if (isPassword) PasswordVisualTransformation() else VisualTransformation.None,
