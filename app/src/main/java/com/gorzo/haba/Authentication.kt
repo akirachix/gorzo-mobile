@@ -31,6 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.colorResource
@@ -208,8 +209,9 @@ fun InputField( label:String, isPassword: Boolean = false, keyboardType:Keyboard
 }
 
 @Composable
-fun SignIn(navController: NavController,
-           onNext: () -> Unit){
+fun SignIn(onForgetPassword: () -> Unit,
+           onSignIn: () -> Unit,
+           navController: NavController,){
     Column (modifier = Modifier.fillMaxSize().padding(25.dp, 90.dp), horizontalAlignment = Alignment.Start) {
         Text(
             text="WELCOME BACK!",
@@ -238,11 +240,17 @@ fun SignIn(navController: NavController,
         InputField( label = "Enter Your Pin",keyboardType = KeyboardType.NumberPassword)
 
         Spacer(Modifier.height(40.dp))
-        Button(onClick = onNext,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
+        Button(onClick = onSignIn,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
 
             Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp)
         }
-        Spacer(Modifier.height(40.dp))
+
+        Spacer(Modifier.height(10.dp))
+        TextButton(onClick = onForgetPassword) {
+            Text("Forgot Pin?", fontSize = 16.sp,  fontFamily = kodchassan, color = HabaOrange,fontWeight = FontWeight.Normal, modifier = Modifier.padding(start = 10.dp))
+        }
+
+        Spacer(Modifier.height(60.dp))
 
 
         ClickableText(
@@ -296,5 +304,5 @@ fun SignIn(navController: NavController,
 @Composable
 fun SignInPreview(){
     val previewNavController = rememberNavController()
-    SignIn(navController = previewNavController,onNext = {})
+    SignIn(onForgetPassword = {}, onSignIn = {}, navController = previewNavController)
 }

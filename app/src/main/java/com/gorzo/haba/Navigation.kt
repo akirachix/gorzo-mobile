@@ -39,7 +39,7 @@ fun OnBoardingNavigation(){
 
         }
         composable("signin"){
-            SignIn(navController = navController, onNext = { navController.navigate ("forget")})
+            SignIn(onForgetPassword = {navController.navigate("forget")}, onSignIn = {navController.navigate("home")}, navController = navController)
 
         }
 
