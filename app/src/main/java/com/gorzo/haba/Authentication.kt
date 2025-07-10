@@ -31,6 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.colorResource
@@ -136,7 +137,7 @@ fun SignUpScreen(navController: NavController,
                 withStyle(
                     style = SpanStyle(
                         color = HabaOrange,
-                        fontWeight = FontWeight.Bold
+
                     )
                 ) {
                     append("Sign in")
@@ -148,7 +149,7 @@ fun SignUpScreen(navController: NavController,
                 .fillMaxWidth(),
             style = androidx.compose.ui.text.TextStyle(
                 fontSize = 18.sp,
-                fontFamily = kodchassan,
+                fontFamily = manrope,
                 textAlign = TextAlign.Center,
                 color = Color.Black
             ),
@@ -208,8 +209,9 @@ fun InputField( label:String, isPassword: Boolean = false, keyboardType:Keyboard
 }
 
 @Composable
-fun SignIn(navController: NavController,
-           onNext: () -> Unit){
+fun SignIn(onForgetPassword: () -> Unit,
+           onSignIn: () -> Unit,
+           navController: NavController,){
     Column (modifier = Modifier.fillMaxSize().padding(25.dp, 90.dp), horizontalAlignment = Alignment.Start) {
         Text(
             text="WELCOME BACK!",
@@ -231,16 +233,24 @@ fun SignIn(navController: NavController,
         Text (text = "Phone Number", fontFamily = manrope)
         Spacer(modifier = Modifier.height(8.dp))
         InputField( label = "Enter Your Phone Number",keyboardType = KeyboardType.Phone)
+
         Spacer(modifier = Modifier.height(13.dp))
         Text (text = "PIN", fontFamily = manrope)
         Spacer(modifier = Modifier.height(8.dp))
         InputField( label = "Enter Your Pin",keyboardType = KeyboardType.NumberPassword)
 
+
+        Spacer(Modifier.height(10.dp))
+        TextButton(onClick = onForgetPassword) {
+            Text("Forgot Pin?", fontSize = 18.sp, fontWeight = FontWeight.Bold,  fontFamily = manrope, color = HabaOrange, modifier = Modifier.padding(start = 1.dp))
+        }
         Spacer(Modifier.height(40.dp))
-        Button(onClick = {},  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
+        Button(onClick = onSignIn,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
 
             Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp)
         }
+
+
         Spacer(Modifier.height(40.dp))
 
 
@@ -251,7 +261,7 @@ fun SignIn(navController: NavController,
                 withStyle(
                     style = SpanStyle(
                         color = HabaOrange,
-                        fontWeight = FontWeight.Bold
+
                     )
                 ) {
                     append("Sign up")
@@ -263,7 +273,7 @@ fun SignIn(navController: NavController,
                 .fillMaxWidth(),
             style = androidx.compose.ui.text.TextStyle(
                 fontSize = 18.sp,
-                fontFamily = kodchassan,
+                fontFamily = manrope,
                 textAlign = TextAlign.Center,
                 color = Color.Black
             ),
@@ -295,5 +305,5 @@ fun SignIn(navController: NavController,
 @Composable
 fun SignInPreview(){
     val previewNavController = rememberNavController()
-    SignIn(navController = previewNavController,onNext = {})
+    SignIn(onForgetPassword = {}, onSignIn = {}, navController = previewNavController)
 }

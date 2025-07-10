@@ -73,15 +73,27 @@ fun OnBoardingNavigation() {
                 navController.navigate("signin")
             })
         }
-        composable("signin") {
-            SignIn(navController = navController, onNext = {
-                navController.navigate("home") {
-                    popUpTo("roleSelection") { inclusive = true } // Clear onboarding from back stack
-                }
-            })
-        }
-        composable("home") {
+        composable("signin"){
+            SignIn(onForgetPassword = {navController.navigate("forget")}, onSignIn = {navController.navigate("home")}, navController = navController)
 
         }
+
+        composable("forget"){
+            PasswordScreen(onNext = {navController.navigate("otp")}, onBack = {navController.navigate("signin")})
+
+        }
+
+        composable("otp"){
+            EnterOtpScreen(onNext = {navController.navigate("reset")}, onBack = {navController.navigate("forget")})
+        }
+
+composable("reset"){
+    ResetPassword(onNext = {navController.navigate("signin")}, onBack = {navController.navigate("otp")})
+}
+
+
+
+
+
     }
 }
