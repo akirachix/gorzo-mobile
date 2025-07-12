@@ -45,7 +45,8 @@ fun OnboardingScreen(
     showProgressDots: Boolean = false,
     currentIndex: Int = 0,
     totalDots: Int = 0
-) {
+)
+{
     val kodchassan = FontFamily(Font(R.font.kodchassan))
     val manrope = FontFamily(Font(R.font.manrope))
     Column(
@@ -161,7 +162,7 @@ fun PreviewInventory() {
 @Composable
 fun OrderManagement(onNext: () -> Unit){
     OnboardingScreen(
-        imageRes = R.drawable.ordermanagement,
+        imageRes = R.drawable.vegetables,
         heading = "Order Management",
         content = "  Provides vendors with a centralized platform to view, track, and manage all customer orders.",
         buttonText = "Continue",
