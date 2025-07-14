@@ -56,6 +56,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.NotificationCompat.Style
 import com.gorzo.haba.ui.theme.HabaOrange
+import com.gorzo.haba.ui.theme.kodchassan
 import com.gorzo.haba.ui.theme.manrope
 
 @Composable
@@ -83,12 +84,12 @@ Column(
 
     }
 
-Text(text = "Forgot Pin", fontFamily = manrope, color = HabaOrange,
-    style = MaterialTheme.typography.headlineLarge,fontSize = 35.sp,
+Text(text = "Forgot Pin", fontFamily = kodchassan, color = HabaOrange,
+    style = MaterialTheme.typography.headlineLarge,fontSize = 40.sp,
 fontWeight = FontWeight.Bold,
-    modifier = Modifier .padding(top = 30.dp, start = 50.dp ).padding(horizontal = 20.dp)
+    modifier = Modifier .padding(top = 25.dp, start = 70.dp ).padding(horizontal =1.dp)
 )
-    Spacer(Modifier.height(25.dp))
+    Spacer(Modifier.height(30.dp))
 
     Text(text = "Enter Your Phone number below and we’ll send you a link to reset your pin",
     fontFamily = manrope,
@@ -97,13 +98,13 @@ fontWeight = FontWeight.Bold,
     Spacer(Modifier.height(50.dp))
 
     InputField( label = "Enter your phone number",keyboardType = KeyboardType.NumberPassword,
-        modifier = Modifier.padding(horizontal = 40.dp).width(300.dp))
+        modifier = Modifier.padding(horizontal = 20.dp).width(340.dp))
 
 
     Spacer(Modifier.height(30.dp))
     Button(onClick = onNext,
         colors = ButtonDefaults.buttonColors(containerColor = HabaOrange),
-        modifier = Modifier.padding(horizontal = 40.dp).width(290.dp),
+        modifier = Modifier.padding(horizontal = 20.dp).width(340.dp),
         shape = RoundedCornerShape(8.dp),
     )
     {
@@ -182,14 +183,14 @@ fun EnterOtpScreen(onNext: () -> Unit,onBack: () -> Unit) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(280.dp)
+                    .height(310.dp)
                     .background(Color(0xFFFF6B00))
             ) {
                 IconButton(
                     onClick = onBack,
                     modifier = Modifier
                         .align(Alignment.TopStart)
-                        .padding(16.dp).padding(top = 20.dp)
+                        .padding(16.dp).padding(top = 15.dp)
                 ) {
                     Icon(
 
@@ -200,16 +201,16 @@ fun EnterOtpScreen(onNext: () -> Unit,onBack: () -> Unit) {
                     text = "Enter Your OTP",
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp,
+                    fontSize = 30.sp,
                     fontFamily = FontFamily(Font(R.font.kodchassan)),
-                    modifier = Modifier.align(Alignment.TopCenter).padding(top = 42.dp)
+                    modifier = Modifier.align(Alignment.TopCenter).padding(top = 50.dp)
                 )
                 Icon(
-                    painter = painterResource(id = R.drawable.twotone_add_photo_alternate_24),
+                    painter = painterResource(id = R.drawable.outline_mobile_chat_24),
                     contentDescription ="MOBILE",
                     tint = Color.White,
                     modifier = Modifier
-                        .size(90.dp)
+                        .size(80.dp)
                         .align(Alignment.Center)
                 )
             }
@@ -217,13 +218,13 @@ fun EnterOtpScreen(onNext: () -> Unit,onBack: () -> Unit) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 210.dp )
+                    .padding(top = 240.dp )
                     .padding(horizontal = 20.dp )
                     .background(Color.White, shape = RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp))
                     .padding(horizontal = 16.dp, vertical = 24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("We've sent OTP on your number", fontSize = 18.sp)
+                Text("We've sent OTP on your number", fontSize = 18.sp, fontFamily = manrope)
                 Spacer(modifier = Modifier.height(16.dp))
                 OtpUnderlineInput(otp= otp)
                 Spacer(modifier = Modifier.height(50.dp))
@@ -239,18 +240,19 @@ fun EnterOtpScreen(onNext: () -> Unit,onBack: () -> Unit) {
                 )
 
                 {
-                    Text("Verify", color = Color.White)
+                    Text("Verify", fontSize = 22.sp,color = Color.White,  fontFamily = manrope)
                 }
 
                 Spacer(modifier = Modifier.height(30.dp))
 
                 Row {
-                    Text("Didn't Receive a OTP?")
+                    Text("Didn't Receive a OTP?" , fontFamily = manrope)
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         "Resend OTP",
                         color = Color(0xFFFF6B00),
                         fontWeight = FontWeight.Bold,
+                         fontFamily = manrope,
                         modifier = Modifier.clickable { /* Handle resend */ }
                     )
                 }
@@ -302,31 +304,33 @@ fun ResetPassword(onNext: () -> Unit,onBack: () -> Unit) {
 
         }
         Text(
-            text = "Reset Pin", fontFamily = manrope, color = HabaOrange,
-            style = MaterialTheme.typography.headlineLarge, fontSize = 35.sp,
+            text = "Reset Pin", fontFamily = kodchassan, color = HabaOrange,
+            style = MaterialTheme.typography.headlineLarge, fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 30.dp,).padding(horizontal = 45.dp)
+            modifier = Modifier.padding(top = 30.dp,).padding(horizontal = 65.dp)
         )
         Spacer(Modifier.height(45.dp))
 
-        Text(" Pin", fontFamily = manrope, modifier = Modifier.padding(start = 45.dp))
+        Text(" Pin", fontFamily = manrope, modifier = Modifier.padding(start = 20.dp)
+, fontSize = 20.sp
+        )
         InputField( label = "Enter your pin",keyboardType = KeyboardType.NumberPassword,
-            modifier = Modifier.padding(horizontal = 40.dp).width(300.dp))
+            modifier = Modifier.padding(horizontal = 20.dp).width(340.dp))
         Spacer(Modifier.height(40.dp))
 
-        Text("Confirm  Pin",fontFamily = manrope,modifier = Modifier.padding(start = 45.dp))
+        Text("Confirm  Pin",fontFamily = manrope,modifier = Modifier.padding(start = 20.dp), fontSize = 20.sp)
         InputField( label = "Confirm your pin",keyboardType = KeyboardType.NumberPassword,
-            modifier = Modifier.padding(horizontal = 40.dp).width(300.dp))
+            modifier = Modifier.padding(horizontal = 20.dp).width(340.dp))
         Spacer(Modifier.height(45.dp))
 
         Button(
             onClick = onNext,
             colors = ButtonDefaults.buttonColors(containerColor = HabaOrange),
-            modifier = Modifier.padding(horizontal = 40.dp).width(290.dp),
+            modifier = Modifier.padding(horizontal = 20.dp).width(340.dp),
             shape = RoundedCornerShape(8.dp),
         )
         {
-            Text("Reset pin", fontSize = 25.sp, fontFamily = manrope)
+            Text("Reset pin", fontSize = 23.sp, fontFamily = manrope)
         }
     }
 }

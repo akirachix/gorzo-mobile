@@ -49,7 +49,7 @@ fun SignUpField( label:String, isPassword: Boolean = false, keyboardType:Keyboar
     var value by remember { mutableStateOf("") }
     OutlinedTextField(value=value,
         onValueChange = {value = it},
-        label = { Text(label, fontSize = 18.sp) },
+        label = { Text(label, fontSize = 14.sp) },
         textStyle = TextStyle(fontSize = 14.sp),
         singleLine= true,
         visualTransformation = if (isPassword) PasswordVisualTransformation() else VisualTransformation.None,
@@ -137,7 +137,7 @@ fun SignUpScreen(navController: NavController,
                 withStyle(
                     style = SpanStyle(
                         color = HabaOrange,
-                        fontWeight = FontWeight.Bold
+
                     )
                 ) {
                     append("Sign in")
@@ -149,7 +149,7 @@ fun SignUpScreen(navController: NavController,
                 .fillMaxWidth(),
             style = androidx.compose.ui.text.TextStyle(
                 fontSize = 18.sp,
-                fontFamily = kodchassan,
+                fontFamily = manrope,
                 textAlign = TextAlign.Center,
                 color = Color.Black
             ),
@@ -239,18 +239,19 @@ fun SignIn(onForgetPassword: () -> Unit,
         Spacer(modifier = Modifier.height(8.dp))
         InputField( label = "Enter Your Pin",keyboardType = KeyboardType.NumberPassword)
 
-        Spacer(Modifier.height(40.dp))
-        Button(onClick = onSignIn,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
-
-            Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp)
-        }
 
         Spacer(Modifier.height(10.dp))
         TextButton(onClick = onForgetPassword) {
-            Text("Forgot Pin?", fontSize = 16.sp,  fontFamily = kodchassan, color = HabaOrange,fontWeight = FontWeight.Normal, modifier = Modifier.padding(start = 10.dp))
+            Text("Forgot Pin?", fontSize = 18.sp, fontWeight = FontWeight.Bold,  fontFamily = manrope, color = HabaOrange, modifier = Modifier.padding(start = 1.dp))
+        }
+        Spacer(Modifier.height(40.dp))
+        Button(onClick = onSignIn,  shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF57C00)), modifier = Modifier.fillMaxWidth() ){
+
+            Text("Sign in", color = Color.White , fontFamily = manrope, fontSize = 25.sp, fontWeight = FontWeight.Bold)
         }
 
-        Spacer(Modifier.height(60.dp))
+
+        Spacer(Modifier.height(40.dp))
 
 
         ClickableText(
@@ -260,7 +261,7 @@ fun SignIn(onForgetPassword: () -> Unit,
                 withStyle(
                     style = SpanStyle(
                         color = HabaOrange,
-                        fontWeight = FontWeight.Bold
+  fontWeight = FontWeight.Bold
                     )
                 ) {
                     append("Sign up")
@@ -272,7 +273,7 @@ fun SignIn(onForgetPassword: () -> Unit,
                 .fillMaxWidth(),
             style = androidx.compose.ui.text.TextStyle(
                 fontSize = 18.sp,
-                fontFamily = kodchassan,
+                fontFamily = manrope,
                 textAlign = TextAlign.Center,
                 color = Color.Black
             ),
