@@ -50,8 +50,9 @@ fun BottomWave(modifier: Modifier = Modifier, color: Color = HabaOrange) {
     }
 }
 
+
 @Composable
-fun RoleSelectionScreen(navController: NavController) {
+fun RoleSelectionScreen(onRoleSelected: (String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -82,9 +83,7 @@ fun RoleSelectionScreen(navController: NavController) {
             modifier = Modifier.padding(top = 8.dp, bottom = 32.dp)
         )
         Button(
-            onClick = {
-                navController.navigate("customer/welcome")
-            },
+            onClick = { onRoleSelected("customer") },
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(containerColor = HabaOrange),
             modifier = Modifier
@@ -95,10 +94,7 @@ fun RoleSelectionScreen(navController: NavController) {
             Text(text = "I'm a Customer")
         }
         Button(
-            onClick = {
-                navController.navigate("vendor/welcome")
-            },
-
+            onClick = { onRoleSelected("vendor") },
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(containerColor = HabaLightOrange),
             modifier = Modifier
@@ -115,8 +111,7 @@ fun RoleSelectionScreen(navController: NavController) {
 
 @Composable
 @Preview(showBackground = true)
-fun PreviewRole(){
-    val navController = rememberNavController()
-    RoleSelectionScreen(navController = navController)
-
+fun PreviewRole() {
+    RoleSelectionScreen(onRoleSelected = {})
 }
+
