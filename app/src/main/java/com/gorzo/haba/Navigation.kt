@@ -82,7 +82,6 @@ fun OnBoardingNavigation() {
             })
         }
 
-        // Signup shared for both roles
         composable("signup") {
             SignUpScreen(
                 navController = navController,
@@ -98,7 +97,6 @@ fun OnBoardingNavigation() {
         }
 
 
-        // Signin shared for both roles
         composable("signin") {
             SignIn(
                 navController = navController,
