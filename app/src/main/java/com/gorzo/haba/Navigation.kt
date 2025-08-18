@@ -5,8 +5,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.NavController
-import HomeScreens.CustomerHomeScreen
-import HomeScreens.VendorHomeScreen
+import HomeScreens.CustomerMainScreen
+import VendorScreens.VendorMainScreen
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 
 @Composable
 fun OnBoardingNavigation() {
@@ -134,12 +140,15 @@ fun OnBoardingNavigation() {
 
         // Home Screens
         composable("customer_home") {
-            CustomerHomeScreen(navController = navController)
+            CustomerMainScreen(navController = navController)
         }
 
         composable("vendor_home") {
-            VendorHomeScreen(navController = navController)
+            VendorMainScreen(navController = navController)
         }
 
     }
 }
+
+
+

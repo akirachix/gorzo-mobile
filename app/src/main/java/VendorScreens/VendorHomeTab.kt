@@ -1,4 +1,6 @@
-package HomeScreens
+package VendorScreens
+
+
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
@@ -79,7 +81,7 @@ fun OneTimeOrderCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(color = Color(0xFFFFF8F1), shape = RoundedCornerShape(12.dp))
+            .background(color = Color.White, shape = RoundedCornerShape(12.dp))
             .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(12.dp))
             .padding(16.dp)
     ) {
@@ -156,7 +158,7 @@ fun GroupOrderCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(color = Color(0xFFFFF8F1), shape = RoundedCornerShape(12.dp))
+            .background(color = Color.White, shape = RoundedCornerShape(12.dp))
             .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(12.dp))
             .padding(16.dp)
     ) {
@@ -250,36 +252,14 @@ fun GroupOrderCard(
 }
 
 @Composable
-fun VendorHomeScreen(navController: NavController) {
-    var currentTab by remember { mutableStateOf("Home") }
+fun VendorHomeScreen(navController: NavController, modifier: Modifier = Modifier) {
 
-    Scaffold(
-        bottomBar = {
-            VendorBottomNavBar(selected = currentTab, onSelect = { selectedTab ->
-                currentTab = selectedTab
-                when (selectedTab) {
-                    "Home" -> navController.navigate("vendor_home") {
-                        popUpTo("vendor_home") { inclusive = true }
-                    }
-                    "Orders" -> navController.navigate("vendor_orders") {
-                        popUpTo("vendor_orders") { inclusive = true }
-                    }
-                    "Sales" -> navController.navigate("vendor_sales") {
-                        popUpTo("vendor_sales") { inclusive = true }
-                    }
-                    "Profile" -> navController.navigate("vendor_profile") {
-                        popUpTo("vendor_profile") { inclusive = true }
-                    }
-                }
-            })
-        },
-        content = { paddingValues ->
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(0xFFFFF5F5))
                     .verticalScroll(rememberScrollState())
-                    .padding(paddingValues)
+                    .background(Color(0xFFFFF5F5))
+                    .fillMaxSize()
+                    .padding(bottom = 8.dp)
             ) {
                 Box(
                     modifier = Modifier
@@ -298,9 +278,9 @@ fun VendorHomeScreen(navController: NavController) {
                     ) {
                         Row(
                             modifier = Modifier.fillMaxWidth()
-                            .padding(top = 16.dp),
+                                .padding(top = 16.dp),
 
-                        verticalAlignment = Alignment.CenterVertically,
+                            verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Image(
@@ -378,46 +358,14 @@ fun VendorHomeScreen(navController: NavController) {
                         itemIconResId = R.drawable.bananas
                     )
                 }
+                Spacer(modifier = Modifier.height(24.dp))
+
             }
         }
-    )
-}
 
 
-@Composable
-fun VendorBottomNavBar(selected: String, onSelect: (String) -> Unit) {
-    val items = listOf("Home", "Inventory", "Orders", "Sales")
-    val icons = listOf<BottomNavIcon>(
-        BottomNavIcon.VectorIcon(Icons.Filled.Home),
-        BottomNavIcon.PainterIcon(painterResource(id = R.drawable.outline_inventory_24)),
-        BottomNavIcon.PainterIcon(painterResource(id = R.drawable.outline_order_approve_24)),
-        BottomNavIcon.PainterIcon(painterResource(id = R.drawable.outline_money_bag_24))
-    )
-    NavigationBar(containerColor = Color.White) {
-        items.forEachIndexed { index, item ->
-            val iconComposable: @Composable () -> Unit = {
-                when (val icon = icons[index]) {
-                    is BottomNavIcon.VectorIcon -> Icon(imageVector = icon.imageVector, contentDescription = item)
-                    is BottomNavIcon.PainterIcon -> Icon(painter = icon.painter, contentDescription = item)
-                }
-            }
-            NavigationBarItem(
-                selected = selected == item,
-                onClick = { onSelect(item) },
-                icon = iconComposable,
-                label = { Text(item) },
-                alwaysShowLabel = true,
-                colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color(0xFFFF6F00),
-                    selectedTextColor = Color(0xFFFF6F00),
-                    unselectedIconColor = Color.Black,
-                    unselectedTextColor = Color.Black,
-                    indicatorColor = Color(0xFFFFF3E0)
-                )
-            )
-        }
-    }
-}
+
+
 
 
 
